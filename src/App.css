@@ -1,0 +1,138 @@
+#root {
+  /* max-width: 100%; */
+  /* padding: 2rem; */
+}
+
+header {
+  background-color: transparent;
+  width: auto;
+  height: 114px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* font-size: calc(10px + 2vmin); */
+  padding: 0px 40px;
+  z-index: 1000;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 44px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px; /* Adjust gap for better spacing */
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburger.hover:hover {
+  width: 34px;
+}
+
+.line {
+  width: 100%;
+  height: 3px; /* Thickness of the lines */
+  text-align: center;
+  background-color: #ffffff; /* Color of the lines */
+  border-radius: 10px;
+  transition: all 0.3s ease; /* Smooth transition */
+  position: relative; /* Position relative for absolute positioning of lines */
+}
+
+.hamburger.active {
+  transform: rotate(1deg);
+}
+
+.hamburger.active .line1 {
+  transform: rotate(45deg) translate(6px, 6px); /* Rotate and move the first line */
+}
+
+.hamburger.active .line2 {
+  transform: rotate(-45deg) translate(6px, -6px); /* Rotate and move the second line */
+}
+
+.header-connect-btn {
+  cursor: pointer;
+  position: relative;
+  width: 144px;
+  height: 56px;
+  margin: auto 0px;
+  color: #000000;
+  background-color: #bdfe4f;
+  border-radius: 8px;
+  border: 1px solid #bdfe4f;
+}
+
+.header-connect-btn:hover {
+  transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -webkit-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  background-color: #000000;
+}
+
+.header-connect-btn .header-connect-btn-text-container {
+  position: relative;
+  margin: auto auto;
+  width: 100%;
+  height: 18px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.connect-text-1,
+.connect-text-2 {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.2s ease-in;
+  line-height: 18px;
+}
+
+.connect-text-2 {
+  color: #bdfe4f;
+  opacity: 0;
+}
+
+.header-connect-btn:hover .connect-text-1 {
+  color: #000000;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.header-connect-btn:hover .connect-text-2 {
+  color: #bdfe4f;
+  transform: translateY(-100%);
+  opacity: 1;
+}
+
+.navbar-content-wrapper {
+  z-index: -10;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 80%;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-body {
+  position: relative;
+  width: 100%;
+  z-index: -100;
+}
