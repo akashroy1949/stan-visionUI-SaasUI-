@@ -1,12 +1,14 @@
 import { useState } from "react";
 import LogoSvg from "../assets/images/logo.svg";
-import { TwoLineHamburger } from "../components";
+import { NavMenuBar, TwoLineHamburger } from "../components";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
+  const [navWipeUpOnLoad, setNavWipeUpOnLoad] = useState(false);
 
   const toggleMenu = () => {
     setIsActive(!isActive);
+    setNavWipeUpOnLoad(true);
   };
 
   return (
@@ -38,11 +40,7 @@ const Header = () => {
       </header>
 
       {/* NavBar */}
-      {isActive && (
-        <div className="navbar-content-wrapper">
-          <div>NavBar</div>
-        </div>
-      )}
+      <NavMenuBar navWipeUpOnLoad={navWipeUpOnLoad} isActive={isActive} />
     </>
   );
 };
